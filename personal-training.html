@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Training | FitLife Gym</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #f7f9fa;
+            --secondary-bg: #ffffff;
+            --card-bg: #f0f4f8;
+            --text-main: #1a2233;
+            --text-accent: #3a6ea5;
+            --accent: #3a6ea5;
+            --accent-2: #7b2ff2;
+            --shadow: 0 8px 32px 0 rgba(58,110,165,0.08);
+        }
+        [data-theme="dark"] {
+            --primary-bg: #181c24;
+            --secondary-bg: #232a36;
+            --card-bg: #232a36;
+            --text-main: #f7f9fa;
+            --text-accent: #7b2ff2;
+            --accent: #7b2ff2;
+            --accent-2: #3a6ea5;
+            --shadow: 0 8px 32px 0 rgba(123,47,242,0.12);
+        }
+        body {
+            background: var(--primary-bg);
+            color: var(--text-main);
+            transition: background 0.3s, color 0.3s;
+        }
+        .container {
+            background: var(--secondary-bg);
+            box-shadow: var(--shadow);
+            transition: background 0.3s;
+        }
+        .trainer-card, .testimonials, .faq {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            transition: background 0.3s;
+        }
+        h1, h2, h3 {
+            color: var(--accent);
+        }
+        .back-btn { display: inline-block; margin-bottom: 2rem; background: #B19CD9; color: #0D0D0D; padding: 0.5rem 1.5rem; border: none; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.2s; }
+        .back-btn:hover { background: #9370DB; }
+        section { margin-bottom: 2.5rem; }
+        .hero-img { width: 100%; max-height: 280px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        .trainer-list { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .trainer-card { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem; width: 220px; text-align: center; }
+        .trainer-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5rem; border: 3px solid #B19CD9; }
+        ul { padding-left: 1.2rem; }
+        .testimonials { background: rgba(255,255,255,0.07); border-radius: 10px; padding: 1rem; margin-bottom: 2rem; }
+        .testimonial { margin-bottom: 1.2rem; font-style: italic; }
+        .faq { background: rgba(255,255,255,0.07); border-radius: 10px; padding: 1rem; }
+        .faq-item { margin-bottom: 1.2rem; }
+        .faq-item h3 { margin-bottom: 0.3rem; font-size: 1.1rem; color: #B19CD9; }
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+        .toggle-switch input[type="checkbox"] {
+            width: 40px;
+            height: 20px;
+            appearance: none;
+            background: #ccc;
+            outline: none;
+            border-radius: 20px;
+            position: relative;
+            transition: background 0.3s;
+        }
+        .toggle-switch input[type="checkbox"]:checked {
+            background: var(--accent);
+        }
+        .toggle-switch input[type="checkbox"]::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #fff;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.3s;
+        }
+        .toggle-switch input[type="checkbox"]:checked::before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header-bar" style="width:100%;background:var(--secondary-bg);box-shadow:var(--shadow);padding:0.5rem 0 0.5rem 0;display:flex;justify-content:flex-end;align-items:center;gap:1.5rem;position:fixed;top:0;left:0;z-index:1000;">
+        <select id="language-selector">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
+        <div class="toggle-switch">
+            <label for="theme-toggle">🌙</label>
+            <input type="checkbox" id="theme-toggle" />
+            <label for="theme-toggle">☀️</label>
+        </div>
+    </header>
+    <div class="container" style="margin-top:4rem;">
+        <a href="index.html" class="back-btn">&larr; Back to Home</a>
+        <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?auto=format&fit=crop&w=900&q=80" alt="Personal Training Banner" class="hero-img">
+        <header>
+            <h1>Personal Training</h1>
+            <p>Unlock your full potential with our one-on-one personal training sessions. Our certified trainers create customized workout plans tailored to your goals, fitness level, and schedule. Whether you're a beginner or an athlete, we help you achieve real, lasting results.</p>
+        </header>
+        <section class="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Personalized Programs:</strong> Workouts designed just for you</li>
+                <li><strong>Progress Tracking:</strong> Regular assessments and feedback</li>
+                <li><strong>Flexible Scheduling:</strong> Sessions that fit your busy life</li>
+                <li><strong>Expert Guidance:</strong> Safe, effective, and motivating coaching</li>
+                <li><strong>Nutrition Advice:</strong> Integrated fitness and dietary support</li>
+            </ul>
+        </section>
+        <section class="trainers">
+            <h2>Meet Our Trainers</h2>
+            <div class="trainer-list">
+                <div class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=300&q=80" alt="Trainer John">
+                    <div><strong>John Doe</strong></div>
+                    <small>Strength & Conditioning<br>NASM Certified</small>
+                </div>
+                <div class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Trainer Jane">
+                    <div><strong>Jane Smith</strong></div>
+                    <small>Weight Loss Specialist<br>ACE Certified</small>
+                </div>
+                <div class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=300&q=80" alt="Trainer Mike">
+                    <div><strong>Mike Lee</strong></div>
+                    <small>Functional Training<br>ISSA Certified</small>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials">
+            <h2>Success Stories</h2>
+            <div class="testimonial">"I lost 20 pounds and gained so much confidence! My trainer kept me motivated every step of the way."<br><strong>- Emily R.</strong></div>
+            <div class="testimonial">"The personalized approach made all the difference. I feel stronger and healthier than ever!"<br><strong>- Carlos M.</strong></div>
+        </section>
+        <section class="benefits">
+            <h2>Why Choose Personal Training?</h2>
+            <ul>
+                <li>Faster results with focused attention</li>
+                <li>Motivation and accountability</li>
+                <li>Safe and effective techniques</li>
+                <li>Support for all fitness levels</li>
+            </ul>
+        </section>
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How do I get started?</h3>
+                <p>Contact us or sign up online to schedule your free consultation. We'll match you with the right trainer for your goals.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What should I bring to my session?</h3>
+                <p>Wear comfortable workout clothes, bring a water bottle, and get ready to work hard!</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I train with a friend?</h3>
+                <p>Yes! Ask about our partner and small group training options.</p>
+            </div>
+        </section>
+    </div>
+    <script src="lang.js"></script>
+    <script>
+        // Theme toggle logic
+        const themeToggle = document.getElementById('theme-toggle');
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeToggle.checked = theme === 'light' ? false : true;
+        }
+        themeToggle.addEventListener('change', function() {
+            setTheme(this.checked ? 'dark' : 'light');
+        });
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+    </script>
+</body>
+</html> 
